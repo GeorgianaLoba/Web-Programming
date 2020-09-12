@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+}
+h4{
+    color: white;
+    font-size: 20px;
+}
+
+p{
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+input[type="submit"]{
+    margin-top: 4px;
+    margin-left: 20px;
+    background-color: white;
+    padding: 8px;
+    font-weight: bold;
+    color: black;
+    width: 150px;
+}
+input[type="submit"]:hover {
+    background-color: darkgrey;
+}
+
+#puzzle{
+    position: relative;
+    height: 910px;
+    width: 920px;
+    margin-left: 450px;
+    margin-top: 30px;
+    border: 1px solid white;
+    background-color: white;
+}
+
+#puzzle img{
+    margin:2px;
+}
+
+#moves{
+    margin-left: 80px;
+}

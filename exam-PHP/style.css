@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("vama.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+input, label{
+    display: block;
+    padding: 2px;
+    margin: 1px;
+    margin-left: 5%;
+    width: 200px;
+}
+
+input{
+    margin-left: 15%;
+    border-radius: 3px;
+}
+
+td, th{
+    background-color: rgb(55, 55, 100, 0.6);
+    color: rgb(80, 139, 206);
+    border: 1px solid rgb(13, 13, 94);     
+    text-align: center;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    margin-top: 10%;
+    margin-left: 35%;
+    width: 300px;
+    height: 250px;
+    border: 1px solid rgb(79, 169, 243);
+    background-color: rgb(233, 232, 232, 0.5);
+    border-radius: 5px;
+}
+
+#icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-left: 35%;
+}
+
+#login{
+    width: 200px;
+    padding: 3px;
+    margin-top: 5%;
+    background-color: rgb(79, 169, 243);
+    border-radius: 3px;
+    color: white;
+}
+
+#login:hover{
+    background-color: blue;
+}

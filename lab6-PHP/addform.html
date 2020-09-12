@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-2.0.3.js"></script>
+        <link rel="stylesheet" href="forms.css">
+        <title>Add Document</title>
+    </head>
+    <body>
+        <form id="addform">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="numberPages">Number of pages: </label>
+            <input type="number" id="numberPages" name="numberPages">
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type">
+            <label for="format">Format:</label><br>
+            <label for="pdf">pdf</label>
+            <input type="radio" id="pdf" name="format" value="pdf">
+            <label for="doc">doc</label>
+            <input type="radio" id="doc" name="format" value="doc">
+            <label for="mobi">mobi</label>
+            <input type="radio" id="mobi" name="format" value="mobi">
+            <label for="epub">epub</label>
+            <input type="radio" id="epub" name="format" value="epub">
+            <br>
+            <input type="button" value="Add Document" id="added">
+        </form>
+
+        <script>
+            $(document).ready(function(){
+                $('#added').on("click", function(event){
+                    event.preventDefault();
+                    var formats = document.getElementsByName('format');
+                    var length = formats.length;
+                    for (var i = 0; i<length; i++){
+                        if (formats[i].checked){
+                            var format = formats[i].value;
+                            break;
+                        }
+                    }
+                    var params = []
+                    params.push($('#author').val())
+                    params.push($('#title').val())
+                    params.push($('#numberPages').val())
+                    params.push($('#type').val())
+                    params.push(format);
+                    window.opener.performAdd(params);
+                    window.close();
+                });
+            });
+        </script>
+
+
+    </body>
+</html>

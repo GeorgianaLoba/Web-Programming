@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/Content/users.css">
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                var usernameLocal = $("#username").val();
+                var passwordLocal = $("#password").val();
+
+                var rePassword = $("#rePassword").val();
+                if (passwordLocal.localeCompare(rePassword) === 0) {
+                    $.post("/Register/RegisterUser",
+                        {
+                            "username": usernameLocal,
+                            "password": passwordLocal
+                        },
+                        function (data) {
+                            alert('successfully registered ');
+                            location.href = "Login";
+                        });
+                }
+                else {
+                    $("#resultdiv").html("password don't match, try again.");}
+
+                });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="username">Enter username:</label> <input id="username" type="text" name="username" /><br />
+            <label for="password">Enter password:</label> <input id="password" type="password" name="password" /> <br />
+            <label for="rePassword">Retype password:</label><input id="rePassword" type="password" name="rePassword" /> <br />
+            <input id="button" type="button" value="Register" />
+        </form>
+        <div id="resultdiv"></div><br />
+    </div>
+</body>
+</html>

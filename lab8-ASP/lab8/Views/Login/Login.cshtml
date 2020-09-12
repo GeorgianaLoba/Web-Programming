@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Login</title>
+    <link rel="stylesheet" href="~/Content/users.css">
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+                $.get("/Login/LoginUser",
+                    {
+                        username: $("#username").val(),
+                        password: $("#password").val()
+                    },
+                    function (data, status) {
+                        if (data.indexOf("error") !== -1){
+                            $("#resultdiv").css("color", "red");
+                            $("#resultdiv").html("Username or password incorrect...");
+                        }
+                        else{
+                            location.href = 'Documents';
+                        }
+                    });
+            });
+            $('#register').click(function() {
+                location.href = "Register";
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome!</h1>
+    <form>
+        
+        <label for="username">Enter username: </label>
+        <input id="username" type="text" name="username"> <br/>
+        <label for="password">Enter password: </label>
+        <input id="password" type="password" name="password"> <br/>
+        <input id="login" type="button" value="Login"/>
+    </form>
+    <div id="resultdiv"></div><br/>
+    <form>
+        <label for="register">Don't have an account? Register Here</label> <br/>
+        <input type="button" id="register" value="Register"/>
+    </form>
+</div>
+</body>
+</html>

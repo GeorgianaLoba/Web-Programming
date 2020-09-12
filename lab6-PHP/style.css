@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ 
+body{
+    background-image: url("17496.jpg");
+    background-repeat: repeat;
+} 
+
+section{
+    display: block;
+    margin-left: 210px;
+    margin-top: 15px;
+    padding: 5px;
+    position: relative;
+}
+
+td, th{
+    background-color: rgb(55, 55, 100, 0.6);
+    color: rgb(80, 139, 206);
+    border: 1px solid rgb(13, 13, 94);     
+    text-align: center;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+input[type="button"]{
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(243, 104, 104, 0.651);
+    color: white;
+    border:none;
+    box-sizing: border-box;
+    box-shadow: 1px white;
+    width: 150px;
+}
+
+
+tr:not(:first-child):hover{
+    background-color: rgb(55, 55, 100);
+}
+
+input[type="button"]:hover{
+    background-color: rgba(238, 57, 57, 0.651);
+}
+
+
+td:last-child, td:nth-last-child(2) {
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    padding: 0;
+    text-align: center;  
+ }
+
+form input{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+
+label{
+    color: white;
+    margin-left: 5px;
+}
+.paint, .xout{
+    width: 20px;
+    height: 20px;
+}
+
+#lastfilter, #lastlabel{
+    background: transparent;
+}
+
+#filter div{
+    display: inline-block;
+    margin-right:10px;
+}
+
+#filteredData{
+    margin-left: 40px;
+    padding: 15px;
+}
